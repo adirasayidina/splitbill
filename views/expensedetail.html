@@ -12,23 +12,25 @@
 <p class="pageSubtitle">Complete expense detail</p>
 
 <h1 id="expenseTitle"></h1>
-<div class="center-container">
+<div class="center-container" style="margin: 0 20px 0 13px;">
     <div class="input-list" id="inputList">
         <div class="input-row">
             <span class="total-spent">Total Spent</span>
-            <input type="text" id="totalInput" placeholder="Enter number" class="total-input"/>
+            <input type="text" id="totalInput" placeholder="Enter number" class="total-input" style="margin-right: 0;"/>
         </div>
     </div>
 </div>
 
-<div class="input-row" style="margin-top: 20px;">
-    <p class="expenseSub">Paid By</p>
-    <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addPaidBy();" />
-</div>
-<div class="list-container" id="paidByList"></div>
+<main class="scrollable-content">
+    <div class="input-row">
+        <p class="expense-sub">Paid By</p>
+        <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addPaidBy();" />
+    </div>
+    <div class="list-container" id="paidByList"></div>
 
-<div class="input-row">
-    <p class="expenseSub">Split</p>
-    <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addSplit();" />
-</div>
-<div class="list-container" id="splitList"></div>
+    <div class="input-row">
+        <p class="expense-sub">Split</p>
+        <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addSplit();" />
+    </div>
+    <div class="list-container" id="splitList"></div>
+</main>
