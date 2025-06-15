@@ -1,0 +1,34 @@
+<h1 class="pageTitle">Expense Detail</h1>
+
+<div style="display: flex; justify-content: space-between; padding: 1rem; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="/addexpense" data-navigo style="display: flex; align-items: center;">
+            <img src="assets/Button/back-button.png" alt="Back" width="19" style="cursor: pointer;">
+        </a>
+        <span style="font-size: 0.9rem;">Add Expense</span>
+    </div>
+</div>
+
+<p class="pageSubtitle">Complete expense detail</p>
+
+<h1 id="expenseTitle"></h1>
+<div class="center-container">
+    <div class="input-list" id="inputList">
+        <div class="input-row">
+            <span class="total-spent">Total Spent</span>
+            <input type="text" id="totalInput" placeholder="Enter number" class="total-input"/>
+        </div>
+    </div>
+</div>
+
+<div class="input-row" style="margin-top: 20px;">
+    <p class="expenseSub">Paid By</p>
+    <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addPaidBy();" />
+</div>
+<div class="list-container" id="paidByList"></div>
+
+<div class="input-row">
+    <p class="expenseSub">Split</p>
+    <img src="assets/Button/add-button.png" class="add-expense" alt="Add" onclick="addSplit();" />
+</div>
+<div class="list-container" id="splitList"></div>
