@@ -13,14 +13,6 @@ function formatWithDots(value) {
     return value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-
-const expenseTotalInput = document.getElementById("expenseTotal");
-
-expenseTotalInput.addEventListener("input", function () {
-    const raw = this.value.replace(/\D/g, '');
-    this.value = raw.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-});
-
 function addPaidBy(name = "", amount = "") {
     const container = document.getElementById("paidByList");
 
@@ -37,7 +29,7 @@ function addPaidBy(name = "", amount = "") {
 
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
-    defaultOption.textContent = "-- Select Name --";
+    defaultOption.textContent = "--Select Name--";
     nameSelect.appendChild(defaultOption);
 
     storedList.forEach(person => {
@@ -47,12 +39,23 @@ function addPaidBy(name = "", amount = "") {
         if (person === name) option.selected = true;
         nameSelect.appendChild(option);
     });    
+
+    //TODO: check dup
+    nameSelect.addEventListener('onchange', () => {
+
+    });
     
     const amountInput = document.createElement("input");
-    amountInput.type = "number";
+    amountInput.type = "text";
     amountInput.placeholder = "Amount";
     amountInput.value = amount;
     
+    amountInput.addEventListener("input", function () {
+        let rawValue = this.value.replace(/\D/g, '');
+        console.log(rawValue);
+        this.value = formatWithDots(rawValue);
+    });
+
     inputBox.appendChild(nameSelect);
     inputBox.appendChild(amountInput);
 
@@ -66,6 +69,10 @@ function addPaidBy(name = "", amount = "") {
     item.appendChild(minusBtn);
 
     container.appendChild(item);
+}
+
+function checkDup() {
+
 }
 
 function addSplit(name = "", amount = "") {

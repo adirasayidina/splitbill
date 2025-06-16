@@ -1,4 +1,6 @@
 function saveInputList() {
+    //TODO: handle duplicate and empty string
+
     const inputs = document.querySelectorAll('.input-row input');
     const values = Array.from(inputs).map(input => input.value);
     localStorage.setItem('inputList', JSON.stringify(values));
@@ -20,7 +22,23 @@ function addInputRow(value = '') {
     const input = document.createElement('input');
     input.type = 'text';
     input.value = value;
-    input.addEventListener('input', saveInputList);
+    let submitted = false;
+
+    input.addEventListener('keydown', (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            saveInputList();
+            submitted = true;
+            input.blur();
+        }
+    });
+
+    input.addEventListener('blur', () => {
+        if (!submitted) {
+            saveInputList();
+        }
+        submitted = false;
+    });
 
     const minusBtn = document.createElement('img');
     minusBtn.src = 'assets/Button/minus-button.png';

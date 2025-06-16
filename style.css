@@ -265,6 +265,7 @@ a {
     border: transparent;
     border-radius: 8px;
     box-sizing: border-box;
+    margin: 0;
 }
 
 select.name-select {
@@ -285,6 +286,14 @@ select.name-select {
 }
 
 .minus-btn-paid {
+    height: 20px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.minus-btn-card {
     height: 20px;
     width: 20px;
     border: none;
