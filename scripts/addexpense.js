@@ -42,7 +42,7 @@ function addCardUI() {
     input.value = "";
 
     if (isDup(text)) {
-        //TODO: add error message
+        alert("Expense with the same name already exists.");
         return;
     }
 
